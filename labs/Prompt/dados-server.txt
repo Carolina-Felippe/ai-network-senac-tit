@@ -1,0 +1,542 @@
+wslinux01
+---
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 24.04.4 LTS
+Release:        24.04
+Codename:       noble
+---
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:80:31:1f brd ff:ff:ff:ff:ff:ff
+    inet 10.24.82.212/24 brd 10.24.82.255 scope global enp0s3
+       valid_lft forever preferred_lft forever
+    inet 10.24.82.47/24 metric 100 brd 10.24.82.255 scope global secondary dynamic enp0s3
+       valid_lft 27720sec preferred_lft 27720sec
+---
+gateway
+default via 10.24.82.1 dev enp0s3 proto static
+default via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.1.1.195 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.1.1.242 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.24.40.190 via 10.24.82.1 dev enp0s3 proto dhcp src 10.24.82.47 metric 100
+10.24.82.0/24 dev enp0s3 proto kernel scope link src 10.24.82.212
+10.24.82.1 dev enp0s3 proto dhcp scope link src 10.24.82.47 metric 100
+---
+Command 'resolvect' not found, did you mean:
+  command 'resolvectl' from deb systemd-resolved (255.4-1ubuntu8.15)
+Try: sudo apt install <deb name>
+senac@wslinux01:~$ resolvectl status
+Global
+         Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+  resolv.conf mode: stub
+
+Link 2 (enp0s3)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 8.8.8.8
+       DNS Servers: 8.8.8.8 8.8.4.4 10.24.40.190 10.1.1.195 10.1.1.242
+        DNS Domain: senac.br senacsp.edu.br
+---
+
+COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd      1            root  111u  IPv4   7277      0t0  TCP *:22 (LISTEN)
+systemd-n  548 systemd-network   19u  IPv4  14135      0t0  UDP 10.24.82.47:68
+systemd-r  558 systemd-resolve   14u  IPv4   4933      0t0  UDP 127.0.0.53:53
+systemd-r  558 systemd-resolve   15u  IPv4   4934      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r  558 systemd-resolve   16u  IPv4   4935      0t0  UDP 127.0.0.54:53
+systemd-r  558 systemd-resolve   17u  IPv4   4936      0t0  TCP 127.0.0.54:53 (LISTEN)
+node_expo  710   node_exporter    3u  IPv6   9594      0t0  TCP *:9100 (LISTEN)
+node_expo  710   node_exporter    7u  IPv6  13929      0t0  TCP 127.0.0.1:9100->127.0.0.1:41188 (ESTABLISHED)
+prometheu  716      prometheus    6u  IPv6  10306      0t0  TCP *:9091 (LISTEN)
+prometheu  716      prometheus    8u  IPv4  13925      0t0  TCP 127.0.0.1:45706->127.0.0.1:9091 (ESTABLISHED)
+prometheu  716      prometheus   10u  IPv4  13928      0t0  TCP 127.0.0.1:41188->127.0.0.1:9100 (ESTABLISHED)
+prometheu  716      prometheus   16u  IPv6  13926      0t0  TCP 127.0.0.1:9091->127.0.0.1:45706 (ESTABLISHED)
+apache2    760            root    3u  IPv4   7491      0t0  TCP *:80 (LISTEN)
+apache2    760            root    4u  IPv4   7500      0t0  TCP *:8888 (LISTEN)
+java       826          tomcat   44u  IPv6   8908      0t0  TCP *:8080 (LISTEN)
+mysqld     935           mysql   21u  IPv6  10311      0t0  TCP *:33060 (LISTEN)
+mysqld     935           mysql   36u  IPv4  10313      0t0  TCP *:3306 (LISTEN)
+apache2   1043        www-data    3u  IPv4   7491      0t0  TCP *:80 (LISTEN)
+apache2   1043        www-data    4u  IPv4   7500      0t0  TCP *:8888 (LISTEN)
+apache2   1044        www-data    3u  IPv4   7491      0t0  TCP *:80 (LISTEN)
+apache2   1044        www-data    4u  IPv4   7500      0t0  TCP *:8888 (LISTEN)
+apache2   1045        www-data    3u  IPv4   7491      0t0  TCP *:80 (LISTEN)
+apache2   1045        www-data    4u  IPv4   7500      0t0  TCP *:8888 (LISTEN)
+apache2   1046        www-data    3u  IPv4   7491      0t0  TCP *:80 (LISTEN)
+apache2   1046        www-data    4u  IPv4   7500      0t0  TCP *:8888 (LISTEN)
+apache2   1047        www-data    3u  IPv4   7491      0t0  TCP *:80 (LISTEN)
+apache2   1047        www-data    4u  IPv4   7500      0t0  TCP *:8888 (LISTEN)
+grafana   1113         grafana   13u  IPv6   8996      0t0  TCP *:3000 (LISTEN)
+sshd      2022            root    3u  IPv4   7277      0t0  TCP *:22 (LISTEN)
+sshd      2024            root    4u  IPv4  15692      0t0  TCP 10.24.82.212:22->10.24.82.24:65046 (ESTABLISHED)
+sshd      2126           senac    4u  IPv4  15692      0t0  TCP 10.24.82.212:22->10.24.82.24:65046 (ESTABLISHED)
+---
+Processador 
+
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             46 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      2
+  On-line CPU(s) list:       0,1
+Vendor ID:                   GenuineIntel
+  Model name:                Intel(R) Core(TM) i7-14700K
+    CPU family:              6
+    Model:                   183
+    Thread(s) per core:      1
+    Core(s) per socket:      2
+    Socket(s):               1
+    Stepping:                1
+    BogoMIPS:                6835.19
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pg
+                             e mca cmov pat pse36 clflush mmx fxsr sse sse2 ht s
+                             yscall nx rdtscp lm constant_tsc rep_good nopl xtop
+                             ology nonstop_tsc cpuid tsc_known_freq pni pclmulqd
+                             q ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt ae
+                             s xsave avx f16c rdrand hypervisor lahf_lm abm 3dno
+                             wprefetch ibrs_enhanced fsgsbase bmi1 avx2 bmi2 inv
+                             pcid rdseed adx clflushopt sha_ni arat md_clear flu
+                             sh_l1d arch_capabilities
+Virtualization features:
+  Hypervisor vendor:         KVM
+  Virtualization type:       full
+Caches (sum of all):
+  L1d:                       96 KiB (2 instances)
+  L1i:                       64 KiB (2 instances)
+  L2:                        4 MiB (2 instances)
+  L3:                        66 MiB (2 instances)
+NUMA:
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0,1
+Vulnerabilities:
+  Gather data sampling:      Not affected
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             Not affected
+  L1tf:                      Not affected
+  Mds:                       Not affected
+  Meltdown:                  Not affected
+  Mmio stale data:           Not affected
+  Reg file data sampling:    Mitigation; Clear Register File
+  Retbleed:                  Mitigation; Enhanced IBRS
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Vulnerable
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user poi
+                             nter sanitization
+  Spectre v2:                Mitigation; Enhanced / Automatic IBRS; PBRSB-eIBRS
+                             SW sequence; BHI SW loop, KVM SW loop
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+----
+Memória
+
+ total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       1.3Gi       1.9Gi       4.0Mi       898Mi       2.5Gi
+Swap:          2.0Gi          0B       2.0Gi
+---
+Disco
+
+Disk /dev/sda: 50 GiB, 53687091200 bytes, 104857600 sectors
+Disk model: VBOX HARDDISK
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 58B5C12D-F077-4E0F-94E4-57F77FE2BD8F
+
+Device       Start       End   Sectors Size Type
+/dev/sda1     2048      4095      2048   1M BIOS boot
+/dev/sda2     4096   4198399   4194304   2G Linux filesystem
+/dev/sda3  4198400 104855551 100657152  48G Linux filesystem
+
+
+Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 48 GiB, 51535413248 bytes, 100655104 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+---
+Partições
+
+Disk /dev/sda: 50 GiB, 53687091200 bytes, 104857600 sectors
+Disk model: VBOX HARDDISK
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 58B5C12D-F077-4E0F-94E4-57F77FE2BD8F
+
+Device       Start       End   Sectors Size Type
+/dev/sda1     2048      4095      2048   1M BIOS boot
+/dev/sda2     4096   4198399   4194304   2G Linux filesystem
+/dev/sda3  4198400 104855551 100657152  48G Linux filesystem
+
+
+Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 48 GiB, 51535413248 bytes, 100655104 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+senac@wslinux01:~$ ^C
+senac@wslinux01:~$ sudo parted -l
+[sudo] password for senac:
+Sorry, try again.
+[sudo] password for senac:
+Model: ATA VBOX HARDDISK (scsi)
+Disk /dev/sda: 53.7GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start   End     Size    File system  Name  Flags
+ 1      1049kB  2097kB  1049kB                     bios_grub
+ 2      2097kB  2150MB  2147MB  ext4
+ 3      2150MB  53.7GB  51.5GB
+
+
+Model: Linux device-mapper (linear) (dm)
+Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 51.5GB
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags:
+
+Number  Start  End     Size    File system  Flags
+ 1      0.00B  51.5GB  51.5GB  ext4
+ ----
+
+ Placa de rede
+
+lo               UNKNOWN        127.0.0.1/8 ::1/128
+enp0s3           UP             10.24.82.212/24 10.24.82.47/24 metric 100
+
+
+---
+serviços instalados
+UNIT FILE                                    STATE           PRESET
+apache-htcacheclean.service                  disabled        enabled
+apache-htcacheclean@.service                 disabled        enabled
+apache2.service                              enabled         enabled
+apache2@.service                             disabled        enabled
+apparmor.service                             enabled         enabled
+apport-autoreport.service                    static          -
+apport-coredump-hook@.service                static          -
+apport-forward@.service                      static          -
+apport.service                               enabled         enabled
+apt-daily-upgrade.service                    static          -
+apt-daily.service                            static          -
+apt-news.service                             static          -
+autovt@.service                              alias           -
+blk-availability.service                     enabled         enabled
+bolt.service                                 static          -
+cloud-config.service                         enabled         enabled
+cloud-final.service                          enabled         enabled
+cloud-init-hotplugd.service                  static          -
+cloud-init-local.service                     enabled         enabled
+cloud-init.service                           enabled         enabled
+console-getty.service                        disabled        disabled
+console-setup.service                        enabled         enabled
+container-getty@.service                     static          -
+cron.service                                 enabled         enabled
+cryptdisks-early.service                     masked          enabled
+cryptdisks.service                           masked          enabled
+dbus-org.freedesktop.hostname1.service       alias           -
+dbus-org.freedesktop.locale1.service         alias           -
+dbus-org.freedesktop.login1.service          alias           -
+dbus-org.freedesktop.ModemManager1.service   alias           -
+dbus-org.freedesktop.resolve1.service        alias           -
+dbus-org.freedesktop.thermald.service        alias           -
+dbus-org.freedesktop.timedate1.service       alias           -
+dbus-org.freedesktop.timesync1.service       alias           -
+dbus.service                                 static          -
+debug-shell.service                          disabled        disabled
+dm-event.service                             static          -
+dmesg.service                                enabled         enabled
+dpkg-db-backup.service                       static          -
+e2scrub@.service                             static          -
+e2scrub_all.service                          static          -
+e2scrub_fail@.service                        static          -
+e2scrub_reap.service                         enabled         enabled
+emergency.service                            static          -
+esm-cache.service                            static          -
+finalrd.service                              enabled         enabled
+friendly-recovery.service                    static          -
+fstrim.service                               static          -
+fwupd-offline-update.service                 static          -
+fwupd-refresh.service                        static          -
+fwupd.service                                static          -
+getty-static.service                         static          -
+getty@.service                               enabled         enabled
+gpu-manager.service                          enabled         enabled
+grafana-server.service                       enabled         enabled
+grub-common.service                          enabled         enabled
+grub-initrd-fallback.service                 enabled         enabled
+hwclock.service                              masked          enabled
+initrd-cleanup.service                       static          -
+initrd-parse-etc.service                     static          -
+initrd-switch-root.service                   static          -
+initrd-udevadm-cleanup-db.service            static          -
+iscsi.service                                alias           -
+iscsid.service                               disabled        enabled
+keyboard-setup.service                       enabled         enabled
+kmod-static-nodes.service                    static          -
+kmod.service                                 alias           -
+ldconfig.service                             static          -
+logrotate.service                            static          -
+lvm2-lvmpolld.service                        static          -
+lvm2-monitor.service                         enabled         enabled
+lxd-agent.service                            static          -
+lxd-installer@.service                       static          -
+man-db.service                               static          -
+mdadm-grow-continue@.service                 static          -
+mdadm-last-resort@.service                   static          -
+mdcheck_continue.service                     static          -
+mdcheck_start.service                        static          -
+mdmon@.service                               static          -
+mdmonitor-oneshot.service                    static          -
+mdmonitor.service                            static          -
+ModemManager.service                         enabled         enabled
+modprobe@.service                            static          -
+motd-news.service                            static          -
+multipath-tools-boot.service                 masked          enabled
+multipath-tools.service                      alias           -
+multipathd.service                           enabled         enabled
+mysql.service                                enabled         enabled
+netplan-ovs-cleanup.service                  enabled-runtime enabled
+networkd-dispatcher.service                  enabled         enabled
+nftables.service                             disabled        enabled
+node_exporter.service                        enabled         enabled
+open-iscsi.service                           enabled         enabled
+open-vm-tools.service                        enabled         enabled
+packagekit-offline-update.service            static          -
+packagekit.service                           static          -
+pam_namespace.service                        static          -
+phpsessionclean.service                      static          -
+plymouth-halt.service                        static          -
+plymouth-kexec.service                       static          -
+plymouth-log.service                         alias           -
+plymouth-poweroff.service                    static          -
+plymouth-quit-wait.service                   static          -
+plymouth-quit.service                        static          -
+plymouth-read-write.service                  static          -
+plymouth-reboot.service                      static          -
+plymouth-start.service                       static          -
+plymouth-switch-root-initramfs.service       static          -
+plymouth-switch-root.service                 static          -
+plymouth.service                             alias           -
+polkit.service                               static          -
+pollinate.service                            enabled         enabled
+procps.service                               alias           -
+prometheus.service                           enabled         enabled
+quotaon.service                              static          -
+rc-local.service                             static          -
+rescue.service                               static          -
+rsync.service                                disabled        enabled
+rsyslog.service                              enabled         enabled
+screen-cleanup.service                       masked          enabled
+secureboot-db.service                        enabled         enabled
+serial-getty@.service                        disabled        enabled
+setvtrgb.service                             enabled         enabled
+snapd.apparmor.service                       enabled         enabled
+snapd.autoimport.service                     enabled         enabled
+snapd.core-fixup.service                     enabled         enabled
+snapd.failure.service                        static          -
+snapd.recovery-chooser-trigger.service       enabled         enabled
+snapd.seeded.service                         enabled         enabled
+snapd.service                                enabled         enabled
+snapd.snap-repair.service                    static          -
+snapd.system-shutdown.service                enabled         enabled
+ssh.service                                  disabled        enabled
+ssl-cert.service                             enabled         enabled
+sudo.service                                 masked          enabled
+syslog.service                               alias           -
+sysstat-collect.service                      static          -
+sysstat-summary.service                      static          -
+sysstat.service                              enabled         enabled
+system-update-cleanup.service                static          -
+systemd-ask-password-console.service         static          -
+systemd-ask-password-plymouth.service        static          -
+systemd-ask-password-wall.service            static          -
+systemd-backlight@.service                   static          -
+systemd-battery-check.service                static          -
+systemd-binfmt.service                       static          -
+systemd-boot-check-no-failures.service       disabled        disabled
+systemd-bsod.service                         static          -
+systemd-confext.service                      disabled        enabled
+systemd-exit.service                         static          -
+systemd-firstboot.service                    static          -
+systemd-fsck-root.service                    enabled-runtime enabled
+systemd-fsck@.service                        static          -
+systemd-fsckd.service                        static          -
+systemd-growfs-root.service                  static          -
+systemd-growfs@.service                      static          -
+systemd-halt.service                         static          -
+systemd-hibernate-resume.service             static          -
+systemd-hibernate.service                    static          -
+systemd-hostnamed.service                    static          -
+systemd-hwdb-update.service                  static          -
+systemd-hybrid-sleep.service                 static          -
+systemd-initctl.service                      static          -
+systemd-journal-catalog-update.service       static          -
+systemd-journal-flush.service                static          -
+systemd-journald.service                     static          -
+systemd-journald@.service                    static          -
+systemd-kexec.service                        static          -
+systemd-localed.service                      static          -
+systemd-logind.service                       static          -
+systemd-machine-id-commit.service            static          -
+systemd-modules-load.service                 static          -
+systemd-network-generator.service            disabled        enabled
+systemd-networkd-wait-online.service         enabled         enabled
+systemd-networkd-wait-online@.service        disabled        enabled
+systemd-networkd.service                     enabled         enabled
+systemd-pcrextend@.service                   static          -
+systemd-pcrfs-root.service                   static          -
+systemd-pcrfs@.service                       static          -
+systemd-pcrlock-file-system.service          disabled        enabled
+systemd-pcrlock-firmware-code.service        disabled        enabled
+systemd-pcrlock-firmware-config.service      disabled        enabled
+systemd-pcrlock-firmware-config.service      disabled        enabled
+systemd-pcrlock-machine-id.service           disabled        enabled
+systemd-pcrlock-make-policy.service          disabled        enabled
+systemd-pcrlock-secureboot-authority.service disabled        enabled
+systemd-pcrlock-secureboot-policy.service    disabled        enabled
+systemd-pcrmachine.service                   static          -
+systemd-pcrphase-initrd.service              static          -
+systemd-pcrphase-sysinit.service             static          -
+systemd-pcrphase.service                     static          -
+systemd-poweroff.service                     static          -
+systemd-pstore.service                       enabled         enabled
+systemd-quotacheck.service                   static          -
+systemd-random-seed.service                  static          -
+systemd-reboot.service                       static          -
+systemd-remount-fs.service                   enabled-runtime enabled
+systemd-repart.service                       static          -
+systemd-resolved.service                     enabled         enabled
+systemd-rfkill.service                       static          -
+systemd-soft-reboot.service                  static          -
+systemd-storagetm.service                    static          -
+systemd-suspend-then-hibernate.service       static          -
+systemd-suspend.service                      static          -
+systemd-sysctl.service                       static          -
+systemd-sysext.service                       disabled        enabled
+systemd-sysext@.service                      static          -
+systemd-sysupdate-reboot.service             indirect        enabled
+systemd-sysupdate.service                    indirect        enabled
+systemd-sysusers.service                     static          -
+systemd-time-wait-sync.service               disabled        disabled
+systemd-timedated.service                    static          -
+systemd-timesyncd.service                    enabled         enabled
+systemd-tmpfiles-clean.service               static          -
+systemd-tmpfiles-setup-dev-early.service     static          -
+systemd-tmpfiles-setup-dev.service           static          -
+systemd-tmpfiles-setup.service               static          -
+systemd-tpm2-setup-early.service             static          -
+systemd-tpm2-setup.service                   static          -
+systemd-udev-settle.service                  static          -
+systemd-udev-trigger.service                 static          -
+systemd-udevd.service                        static          -
+systemd-update-done.service                  static          -
+systemd-update-utmp-runlevel.service         static          -
+systemd-update-utmp.service                  static          -
+systemd-user-sessions.service                static          -
+systemd-volatile-root.service                static          -
+thermald.service                             enabled         enabled
+tomcat11.service                             enabled         enabled
+tpm-udev.service                             static          -
+ua-reboot-cmds.service                       enabled         enabled
+ua-timer.service                             static          -
+ubuntu-advantage.service                     enabled         enabled
+udev.service                                 alias           -
+udisks2.service                              enabled         enabled
+ufw.service                                  enabled         enabled
+unattended-upgrades.service                  enabled         enabled
+update-notifier-download.service             static          -
+update-notifier-motd.service                 static          -
+upower.service                               disabled        enabled
+usb_modeswitch@.service                      static          -
+usbmuxd.service                              static          -
+user-runtime-dir@.service                    static          -
+user@.service                                static          -
+uuidd.service                                indirect        enabled
+vgauth.service                               enabled         enabled
+vmtoolsd.service                             alias           -
+x11-common.service                           masked          enabled
+xfs_scrub@.service                           static          -
+xfs_scrub_all.service                        static          -
+xfs_scrub_fail@.service                      static          -
+---
+serviços ativos
+
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  apache2.service             loaded active running The Apache HTTP Server
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  getty@tty1.service          loaded active running Getty on tty1
+  grafana-server.service      loaded active running Grafana instance
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  mysql.service               loaded active running MySQL Community Server
+  node_exporter.service       loaded active running Node Exporter
+  polkit.service              loaded active running Authorization Manager
+  prometheus.service          loaded active running Prometheus
+  rsyslog.service             loaded active running System Logging Service
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  tomcat11.service            loaded active running Apache Tomcat11
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  upower.service              loaded active running Daemon for power management
+  user@1000.service           loaded active running User Manager for UID 1000
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+24 loaded units listed.
+---
+
+atualizações
+
+Get:1 https://apt.grafana.com stable InRelease [7,661 B]
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:3 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:5 https://deb.nodesource.com/node_24.x nodistro InRelease
+Get:6 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [2,008 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,704 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [355 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [178 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,693 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [330 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [386 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [11.1 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Get:16 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5,764 B]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [268 kB]
+Get:19 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [42.4 kB]
+Get:20 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [3,006 kB]
+Get:21 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [698 kB]
+Get:22 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,191 kB]
+Get:23 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [230 kB]
+Get:24 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [74.3 kB]
+Get:25 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [8,784 B]
+Fetched 12.6 MB in 3s (4,123 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+78 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+
+

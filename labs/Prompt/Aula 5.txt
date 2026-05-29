@@ -1,0 +1,61 @@
+COMMAND    PID            USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+systemd      1            root  166u  IPv4   7277      0t0  TCP *:22 (LISTEN)
+node_expo  710   node_exporter    3u  IPv6   9594      0t0  TCP *:9100 (LISTEN)
+node_expo  710   node_exporter    6u  IPv6  28032      0t0  TCP 127.0.0.1:9100->127.0.0.1:32990 (ESTABLISHED)
+prometheu  716      prometheus    6u  IPv6  10306      0t0  TCP *:9091 (LISTEN)
+prometheu  716      prometheus    8u  IPv6  28838      0t0  TCP 127.0.0.1:9091->127.0.0.1:48494 (ESTABLISHED)
+prometheu  716      prometheus   10u  IPv4  28031      0t0  TCP 127.0.0.1:32990->127.0.0.1:9100 (ESTABLISHED)
+prometheu  716      prometheus   21u  IPv4  28837      0t0  TCP 127.0.0.1:48494->127.0.0.1:9091 (ESTABLISHED)
+java       826          tomcat   44u  IPv6   8908      0t0  TCP *:8080 (LISTEN)
+mysqld     935           mysql   21u  IPv6  10311      0t0  TCP *:33060 (LISTEN)
+mysqld     935           mysql   36u  IPv4  10313      0t0  TCP *:3306 (LISTEN)
+grafana   1113         grafana   13u  IPv6   8996      0t0  TCP *:3000 (LISTEN)
+sshd      2022            root    3u  IPv4   7277      0t0  TCP *:22 (LISTEN)
+systemd-n 3861 systemd-network   22u  IPv4  32282      0t0  UDP 10.24.82.47:68
+systemd-r 3869 systemd-resolve   14u  IPv4  33092      0t0  UDP 127.0.0.53:53
+systemd-r 3869 systemd-resolve   15u  IPv4  33093      0t0  TCP 127.0.0.53:53 (LISTEN)
+systemd-r 3869 systemd-resolve   16u  IPv4  33094      0t0  UDP 127.0.0.54:53
+systemd-r 3869 systemd-resolve   17u  IPv4  33095      0t0  TCP 127.0.0.54:53 (LISTEN)
+apache2   3929            root    3u  IPv4  32254      0t0  TCP *:80 (LISTEN)
+apache2   3929            root    4u  IPv4  32256      0t0  TCP *:8888 (LISTEN)
+apache2   3939        www-data    3u  IPv4  32254      0t0  TCP *:80 (LISTEN)
+apache2   3939        www-data    4u  IPv4  32256      0t0  TCP *:8888 (LISTEN)
+apache2   3940        www-data    3u  IPv4  32254      0t0  TCP *:80 (LISTEN)
+apache2   3940        www-data    4u  IPv4  32256      0t0  TCP *:8888 (LISTEN)
+apache2   3941        www-data    3u  IPv4  32254      0t0  TCP *:80 (LISTEN)
+apache2   3941        www-data    4u  IPv4  32256      0t0  TCP *:8888 (LISTEN)
+apache2   3942        www-data    3u  IPv4  32254      0t0  TCP *:80 (LISTEN)
+apache2   3942        www-data    4u  IPv4  32256      0t0  TCP *:8888 (LISTEN)
+apache2   3943        www-data    3u  IPv4  32254      0t0  TCP *:80 (LISTEN)
+apache2   3943        www-data    4u  IPv4  32256      0t0  TCP *:8888 (LISTEN)
+sshd      4248            root    4u  IPv4  35279      0t0  TCP 10.24.82.212:22->10.24.82.30:50630 (ESTABLISHED)
+sshd      4380           senac    4u  IPv4  35279      0t0  TCP 10.24.82.212:22->10.24.82.30:50630 (ESTABLISHED)
+---
+UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  apache2.service             loaded active running The Apache HTTP Server
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  getty@tty1.service          loaded active running Getty on tty1
+  grafana-server.service      loaded active running Grafana instance
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  mysql.service               loaded active running MySQL Community Server
+  node_exporter.service       loaded active running Node Exporter
+  polkit.service              loaded active running Authorization Manager
+  prometheus.service          loaded active running Prometheus
+  rsyslog.service             loaded active running System Logging Service
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  tomcat11.service            loaded active running Apache Tomcat11
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  upower.service              loaded active running Daemon for power management
+  user@1000.service           loaded active running User Manager for UID 1000
+
+
+----
